@@ -1,4 +1,5 @@
 import 'package:delivery_app/app/core/ui/helpers/loader.dart';
+import 'package:delivery_app/app/core/ui/helpers/messages.dart';
 import 'package:delivery_app/app/core/ui/widgets/delivery_appbar.dart';
 import 'package:delivery_app/app/models/product_model.dart';
 import 'package:delivery_app/app/pages/home/widgets/delivery_product_tile.dart';
@@ -11,16 +12,17 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> with Loader {
+class _HomePageState extends State<HomePage> with Loader, Messages {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: DeliveryAppbar(),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
-          showLoader();
-          await Future.delayed(Duration(seconds: 2));
-          hideLoader();
+          // showLoader();
+          // await Future.delayed(Duration(seconds: 2));
+          // hideLoader();
+          showError('Erro ao carregar a lista de produtos.');
         },
       ),
       body: Column(
