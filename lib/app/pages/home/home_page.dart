@@ -19,10 +19,10 @@ class _HomePageState extends State<HomePage> with Loader, Messages {
       appBar: DeliveryAppbar(),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
-          // showLoader();
-          // await Future.delayed(Duration(seconds: 2));
-          // hideLoader();
-          showError('Erro ao carregar a lista de produtos.');
+          showLoader();
+          await Future.delayed(Duration(seconds: 2));
+          hideLoader();
+          // showError('Erro ao carregar a lista de produtos.');
         },
       ),
       body: Column(
@@ -35,7 +35,7 @@ class _HomePageState extends State<HomePage> with Loader, Messages {
                   product: ProductModel(
                       id: 0,
                       name: 'Lanche XYZ',
-                      description: 'Descrição',
+                      description: 'Lanche acompanha pão, hamburguer, mussarela e maionese',
                       price: 20.5,
                       image:
                           'https://assets.unileversolutions.com/recipes-v2/106684.jpg?imwidth=800'),
